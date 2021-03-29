@@ -37,7 +37,7 @@ $result=mysqli_query($conn,$sql);
 ?>
 	<center>
 	<h1>Listado de Tickets</h1>
-	<a href=""> Nuevo Ticket </a><br><br>
+	<a href="tickets.php"> Nuevo Ticket </a><br><br>
 	<table border="1">
 		<thead>
 		<tr>
@@ -89,7 +89,7 @@ $result=mysqli_query($conn,$sql);
 			<a href="categorias.php">Categorias</a>
 			<a href="TiposCategorias.php">Tipo Categorias</a>
 			<a href="tickets.php">Creacion de Tickets </a>
-			<a href="ListarTickets.php">TICKETS </a>
+			<a href="ListadoDeTickets.php">TICKETS </a>
 			<a href="#">MENU 6</a>
 		</nav>
 		<label for="btn-menu" class="icon-equis"></label>

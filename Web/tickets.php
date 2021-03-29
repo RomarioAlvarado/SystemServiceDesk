@@ -51,16 +51,6 @@ include("conexion.php")
 <?php
   $mysqli = new mysqli('localhost', 'root', '', 'sistema1');
 
-  //if (isset($_POST['seleccategoria'])) {
-  	//$categoria=$_POST['seleccategoria'];
-  	//echo $categoria;
- // }
-
-  //if (isset($_POST['texttipo'])) {
-  	//$tipo=$_POST['texttipo'];
-  	//echo $tipo;
-  //}
-
 ?>
 
 <tr>
@@ -71,7 +61,7 @@ include("conexion.php")
 </tr>
 <tr>
 
-	<td><label for="paises" class="sr-only">Categoria </label></td>
+	<td><label class="sr-only">Categoria </label></td>
 	<td>
 		<select class="form-control" id="seleccategoria" name="seleccategoria" >
          <option value="">Seleccion Categoria  </option>
@@ -84,7 +74,7 @@ include("conexion.php")
           </select>
 	</td>
 
-	<td><label for="paises" class="sr-only">Tipo </label></td>
+	<td><label class="sr-only">Tipo </label></td>
 	<td>
 		<select class="form-control" name="texttipo">
          <option value="">Seleccion Tipo  </option>
@@ -159,7 +149,7 @@ include("conexion.php")
 			<a href="categorias.php">Categorias</a>
 			<a href="TiposCategorias.php">Tipo Categorias</a>
 			<a href="tickets.php">Creacion de Tickets </a>
-			<a href="ListarTickets.php">TICKETS </a>
+			<a href="ListadoDeTickets.php">TICKETS </a>
 			<a href="#">MENU 6</a>
 		</nav>
 		<label for="btn-menu" class="icon-equis"></label>

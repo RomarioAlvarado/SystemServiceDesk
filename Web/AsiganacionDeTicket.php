@@ -160,7 +160,7 @@ $AsignadoA=$mostrar["nombre"];
 			<a href="categorias.php">Categorias</a>
 			<a href="TiposCategorias.php">Tipo Categorias</a>
 			<a href="tickets.php">Creacion de Tickets </a>
-			<a href="ListarTickets.php">TICKETS </a>
+			<a href="ListadoDeTickets.php">TICKETS </a>
 			<a href="#">MENU 6</a>
 		</nav>
 		<label for="btn-menu" class="icon-equis"></label>
