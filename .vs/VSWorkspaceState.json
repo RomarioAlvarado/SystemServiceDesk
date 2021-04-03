@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Web"
+    "\\Web",
+    "\\Web\\db"
   ],
-  "SelectedNode": "\\Web\\ListadoDeTickets.php",
+  "SelectedNode": "\\Web",
   "PreviewInSolutionExplorer": false
 }

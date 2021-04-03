@@ -40,20 +40,10 @@
 	<?php  
 	if (isset($_POST['reasignar'])) {
 		# code...
-$Numeroticket=$_POST["idTickets"];
-$Solicitante=$_POST["Solicitante"];
-$Fecha=$_POST["Fecha"];
-$Categoria=$_POST["Categoria"];
-$Tipo=$_POST["Tipo"];
-$Descripcion=$_POST["Descripcion"];
-$Area=$_POST["Area"];
-$Estado=$_POST["Estado"];
-$AsignadoA=$_POST["nombre"];
-$idAsignacion=$_POST["id"];
-
-
-$sql="UPDATE tickets SET id='".$idAsignacion."' WHERE idTickets='".$idAsignacion."'";
-$serult=mysqli_query($connn,$sql);
+$textIdticket=$_POST["idTickets"];
+$seleccategoria=$_POST["id"];
+$sql="UPDATE tickets SET id='$seleccategoria' WHERE idTickets='$textIdticket'";
+$result=mysqli_query($conn,$sql);
 
 	if ($result) {
 		# code...
@@ -102,9 +92,19 @@ $AsignadoA=$mostrar["nombre"];
 	<br><br>
 	<form action="<?=$_SERVER['PHP_SELF']?>" method="post">
 		
-		<label>No. De Ticket : </label>
-		<imput type= "text" name="NoTicket" value=""><?php echo $Numeroticket; ?><br>
-		
+		<td><label for="paises" class="sr-only">No. Ticket : </label></td>
+	<td>
+		<select class="form-control" name="textIdticket">
+         
+              <?php
+          		$query = $mysqli -> query ("SELECT idTickets FROM tickets WHERE idTickets='$Numeroticket' ");
+          		while ($valores = mysqli_fetch_array($query)) {
+            	echo '<option value="'.$valores['idTickets'].'">'.$valores['idTickets'].'</option>';
+          			}
+        		?>
+        	
+          </select><br>
+	</td>
 
 		<label>Solicitante : </label>
 		<imput type= "text" name="NoTicket" value=""><?php echo $Solicitante; ?> <br>
@@ -142,7 +142,7 @@ $AsignadoA=$mostrar["nombre"];
 	</td>
 			 <br>
 
-		<input type="hidden" name="id" value="<?php echo $id; ?>">
+		
 
 		<input type="submit" name="reasignar" value="REASIGNAR">
 		<a href="ListadoDeTickets.php">Regresar</a>
