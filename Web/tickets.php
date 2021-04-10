@@ -1,5 +1,8 @@
 <?php
-include("conexion.php")
+session_start();
+include("conexion.php");
+$id=$_SESSION['id'];
+$usuario=$_SESSION['usuario'];
 ?>
 
 <html>
@@ -28,7 +31,7 @@ include("conexion.php")
 				<a href="#">Nosotros</a>
 				<a href="#">Blog</a>
 				<a href="#">Contacto</a>
-				<a href="index.php">Salir</a>
+				<a href="logout.php">Salir</a>
 			</nav>
 		</div>
 	</header>
@@ -55,8 +58,8 @@ include("conexion.php")
 
 <tr>
 
-	<td><label>Solicitante </label></td><td><input type="text" value="" maxlength="50" size="20" name="txtSoli"></td>
-	<td><label>fecha  </label></td><td><input type="date" name="fecha" min="2018-03-25" max="2022-05-25" step="1" /></td>
+	<td><label>Solicitante </label></td><td><input type="text"  maxlength="50" size="20" readonly name="txtSoli" value="<?php echo $usuario;?>"></td>
+	<td><label>fecha  </label></td><td><input type="date" value="<?php echo date('Y-m-d');?>" name="fecha" min="2018-03-25" max="2022-05-25" step="1" /></td>
 	
 </tr>
 <tr>

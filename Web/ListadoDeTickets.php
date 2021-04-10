@@ -71,7 +71,7 @@ $result=mysqli_query($conn,$sql);
 	 			<td>
 	<?php  echo "<a href='AsiganacionDeTicket.php?idTickets=".$mostrar['idTickets']."'>REASIGNAR</a>"; ?>
 	 				-
-	 				<?php  echo "<a href=''>EDITAR</a>"; ?>
+	 				<?php  echo "<a href='seguimiento2.php?idTickets=".$mostrar['idTickets']."'>SEGUIMIENTO</a>"; ?>
 	 			</td>
 				
 			</tr>
