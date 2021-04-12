@@ -1,9 +1,10 @@
 <?php
 
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "sistema1";
+$dbhost = "13.59.80.71:10502";
+$dbuser = "proyecto";
+$dbpass = "Proyecto123456**";
+$dbname = "proyecto_tickets";
+
 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass , $dbname);
 
