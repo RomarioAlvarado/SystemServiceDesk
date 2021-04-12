@@ -7,6 +7,7 @@ $edad = $_POST["txtuser"];
 $nom = $_POST["txtnombre"];
 $tel = $_POST["txtpass"];
 $id = $_POST["txtid"];
+$puesto = $_POST["txtpuesto"];
 
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['limpiardatos']))
 	{
@@ -16,7 +17,7 @@ $id = $_POST["txtid"];
 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['grabardatos']))
 	
 	{
-	$sqlgrabar = "INSERT INTO usuarios(codigo, nombre, usuario, contraseña) values ('$cod','$nom','$edad','$tel')";
+	$sqlgrabar = "call pr_create_user('$cod','$nom','$puesto','$edad','$tel')";
 
 if(mysqli_query($conn,$sqlgrabar))
 {
