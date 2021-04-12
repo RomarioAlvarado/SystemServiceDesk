@@ -3,9 +3,9 @@
 include("conexion.php");
 
 $cod = $_POST["txtcodigo"];
-$edad = $_POST["txtuser"];
+$user = $_POST["txtuser"];
 $nom = $_POST["txtnombre"];
-$tel = $_POST["txtpass"];
+$pass = $_POST["txtpass"];
 $id = $_POST["txtid"];
 $puesto = $_POST["txtpuesto"];
 
@@ -17,7 +17,7 @@ $puesto = $_POST["txtpuesto"];
 if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['grabardatos']))
 	
 	{
-	$sqlgrabar = "call pr_create_user('$cod','$nom','$puesto','$edad','$tel')";
+	$sqlgrabar = "call pr_create_user('$cod','$nom','$puesto','$user','$pass')";
 
 if(mysqli_query($conn,$sqlgrabar))
 {
@@ -33,7 +33,7 @@ if(mysqli_query($conn,$sqlgrabar))
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['modificardatos']))
 	
 	{
-			$sqlmodificar = "UPDATE usuarios SET nombre='$nom',usuario='$edad',contraseña='$tel' WHERE id=$id";
+			$sqlmodificar = "call pr_update_user($id, '$nom', '$puesto', '$user','$pass')";
 
 if(mysqli_query($conn,$sqlmodificar))
 {
@@ -49,7 +49,7 @@ if(mysqli_query($conn,$sqlmodificar))
 	if($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['eliminardatos']))
 	
 	{
-			$sqleliminar = "DELETE FROM usuarios WHERE id=$id";
+			$sqleliminar = "call pr_delete_user($id)";
 
 if(mysqli_query($conn,$sqleliminar))
 {
