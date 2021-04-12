@@ -40,8 +40,8 @@
 	<?php  
 	if (isset($_POST['reasignar'])) {
 		# code...
-$textIdticket=$_POST["idTickets"];
-$seleccategoria=$_POST["id"];
+$textIdticket=$_POST["textIdticket"];
+$seleccategoria=$_POST["seleccategoria"];
 $sql="UPDATE tickets SET id='$seleccategoria' WHERE idTickets='$textIdticket'";
 $result=mysqli_query($conn,$sql);
 
@@ -84,7 +84,8 @@ $AsignadoA=$mostrar["nombre"];
 	
 	?>
 <?php
-  $mysqli = new mysqli('localhost', 'root', '', 'sistema1');
+  //$mysqli = new mysqli('localhost', 'root', '', 'sistema1');
+  $mysqli = new mysqli('13.59.80.71:10502', 'proyecto', 'Proyecto123456**', 'proyecto_tickets');
 ?>
 <center>
 	<br><br>
@@ -94,7 +95,7 @@ $AsignadoA=$mostrar["nombre"];
 		
 		<td><label for="paises" class="sr-only">No. Ticket : </label></td>
 	<td>
-		<select class="form-control" name="textIdticket">
+		<select class="form-control" name="textIdticket" id="textIdticket">
          
               <?php
           		$query = $mysqli -> query ("SELECT idTickets FROM tickets WHERE idTickets='$Numeroticket' ");
@@ -121,7 +122,7 @@ $AsignadoA=$mostrar["nombre"];
 		<label>Descripcion </label>
 		<imput type= "text" name="NoTicket" value=""><?php echo $Descripcion; ?> <br>
 
-		<label>Área </label>
+		<label>ï¿½rea </label>
 		<imput type= "text" name="NoTicket" value=""><?php echo $Area; ?> <br>
 
 		<label>Estado </label>
